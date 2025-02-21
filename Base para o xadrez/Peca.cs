@@ -22,6 +22,6 @@ public abstract class Peça{
         }
 
     }
-    public abstract bool validarMovimento(int destinoX, int destinoY);
+    public abstract bool Verificarmovimento(int destinoX, int destinoY);
 
 }

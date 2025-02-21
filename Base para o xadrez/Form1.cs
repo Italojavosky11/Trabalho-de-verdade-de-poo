@@ -54,7 +54,7 @@ public partial class Form1 : Form
                 // Atualiza a posição visualmente
                 pecaOrigem.pictureBox.Location = new Point(peca.X * 50, peca.Y * 50);
         }
-        else // Se houver outra peça, troca as posições
+        else // Se houver outra peça, remove a peça
         {
                 // Remover peça do tabuleiro
                 this.Controls.Remove(pecaDestino.pictureBox);

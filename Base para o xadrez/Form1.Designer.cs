@@ -49,16 +49,47 @@ partial class Form1
             }   
         }
         Rei reiBranco = new Rei(100,150,"rei.png");
-        tabuleiro[reiBranco.X,reiBranco.Y] = reiBranco;
-        this.Controls.Add(reiBranco.pictureBox);
-        reiBranco.pictureBox.BringToFront();
-        reiBranco.pictureBox.Click += (sender, args) => { cliqueNoTabuleiro(reiBranco); };
+        criarpeça(reiBranco);
 
         Rei reiPreto = new Rei(100,100,"reiPreto.png");
-        tabuleiro[reiPreto.X,reiPreto.Y] = reiPreto;
-        this.Controls.Add(reiPreto.pictureBox);
-        reiPreto.pictureBox.BringToFront();
-        reiPreto.pictureBox.Click += (sender, args) => { cliqueNoTabuleiro(reiPreto); };             
+        criarpeça(reiPreto);
+
+        Rainha rainhaBranca = new Rainha(100, 200, "rainhaBranca.png");
+        criarpeça(rainhaBranca);
+
+        Rainha rainhaPreta = new Rainha(100, 250, "rainhaPreta.png");
+        criarpeça(rainhaPreta);
+
+        Torre torreBranca = new Torre(100,300, "torreBranca.png");
+        criarpeça(torreBranca);
+
+        Torre torrePreta = new Torre(100, 350, "torrePreta.png");
+        criarpeça(torrePreta);
+
+        Bispo bispoBranco = new Bispo(100, 400, "bispoBranco.png");
+        criarpeça(bispoBranco);
+
+        Bispo bispoPreto = new Bispo(100, 450, "bispoPreto.png");
+        criarpeça(bispoPreto);
+
+        Cavalo cavaloBranco = new Cavalo(100, 500, "cavaloBranco.png");
+        criarpeça(cavaloBranco);
+
+        Cavalo cavaloPreto = new Cavalo(100, 550, "cavaloPreto.png");
+        criarpeça(cavaloPreto);
+
+
+    
+    }
+    public void criarpeça(Peça peca)
+    {
+     tabuleiro[peca.X, peca.Y] = peca;
+        this.Controls.Add(peca.pictureBox);
+        peca.pictureBox.BringToFront();
+        peca.pictureBox.Click += (sender, args) => 
+        {
+            cliqueNoTabuleiro(peca);
+        };
     }
      #endregion
 }
