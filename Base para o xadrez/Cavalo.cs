@@ -6,7 +6,10 @@ public class Cavalo : Peça{
     }
     public override bool Verificarmovimento(int destinoX, int destinoY)
     {
-       return true; // falta a movimentação
+        int difX = Math.Abs(destinoX - X);
+        int difY = Math.Abs(destinoY - Y);
+
+        return (difX == 2 && difY == 1) || (difX == 1 && difY == 2);
     }
 
 }

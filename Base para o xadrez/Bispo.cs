@@ -6,7 +6,11 @@ public class Bispo : Peça{
     }
     public override bool Verificarmovimento(int destinoX, int destinoY)
     {
-       return true; // falta a movimentação
+        int difX = Math.Abs(destinoX - X);
+        int difY = Math.Abs(destinoY - Y);
+
+        return difX == difY;
+     // falta a movimentação
        
     }
 

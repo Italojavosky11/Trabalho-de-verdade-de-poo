@@ -6,7 +6,11 @@ public class Peao : Peça{
     }
     public override bool Verificarmovimento(int destinoX, int destinoY)
     {
-       return true; // falta a movimentação
+        int difX = destinoX - X;
+        int difY = destinoY - Y;
+
+        // Considerando que o Peão se move apenas para frente
+        return (difX == 1 && difY == 0) || (difX == 1 && Math.Abs(difY) == 1);
        
     }
 
