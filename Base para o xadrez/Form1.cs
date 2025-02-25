@@ -1,4 +1,5 @@
 using System.CodeDom.Compiler;
+using System.Net.Http.Headers;
 
 namespace xadrez;
 
@@ -6,7 +7,7 @@ public partial class Form1 : Form
 {
         public static int sizeOfTabuleiro = 8;
     
-    private PictureBox pecaSelecionada = null; // Armazena a peça selecionada
+     // Armazena a peça selecionada
     private int origemX = -1, origemY = -1; // Armazena a posição da peça
     public Peça[,] tabuleiro = new Peça[sizeOfTabuleiro,sizeOfTabuleiro];
     public Form1()
@@ -19,7 +20,7 @@ public partial class Form1 : Form
     if (origemX == -1 && origemY == -1) // Primeiro clique: seleciona a peça
     {
         if (peca is not CasaVazia){
-            pecaSelecionada = peca.pictureBox;
+          
             origemX = peca.X;
             origemY = peca.Y;
             MessageBox.Show($"Peça selecionada em ({peca.X}, {peca.Y})");
@@ -34,7 +35,7 @@ public partial class Form1 : Form
         if (!pecaOrigem.Verificarmovimento(peca.X, peca.Y))
         {
             MessageBox.Show("Movimento Inválido!");
-            pecaSelecionada = null;
+           
             origemX = -1;
             origemY = -1;
             return;
@@ -74,7 +75,7 @@ public partial class Form1 : Form
         this.Refresh();
 
         // Reseta os valores para a próxima jogada
-        pecaSelecionada = null;
+       
         origemX = -1;
         origemY = -1;
     }
