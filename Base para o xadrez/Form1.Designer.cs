@@ -29,17 +29,17 @@ partial class Form1
     {
         this.components = new System.ComponentModel.Container();
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(450, 450);
+        this.ClientSize = new System.Drawing.Size(500, 500);
         this.Text = "Xadrez";
-
+  
         InicializarTabuleiro();
-        
+              
         
     }
 
     public void InicializarTabuleiro()
     {
-        for(int i = 2; i < 6 ;i++){
+        for(int i = 0; i < 8 ;i++){
             for(int j = 0; j<8 ;j++){
                 int x = j, y = i;
                  tabuleiro[x,y] = new CasaVazia(x*50, y*50,"casaVazia.png");
@@ -48,35 +48,65 @@ partial class Form1
                  tabuleiro[x,y].pictureBox.Click += (sender, args) => { cliqueNoTabuleiro(tabuleiro[x,y]); };
             }   
         }
-        Rei reiBranco = new Rei(100,150,"rei.png");
+        
+        Rei reiBranco = new Rei(200,0,"reiBranco.png");
         criarpeça(reiBranco);
 
-        Rei reiPreto = new Rei(100,100,"reiPreto.png");
+        Rei reiPreto = new Rei(200,350,"reiPreto.png");
         criarpeça(reiPreto);
 
-        Rainha rainhaBranca = new Rainha(100, 200, "rainhaBranca.png");
+        Rainha rainhaBranca = new Rainha(150, 0, "rainhaBranca.png");
         criarpeça(rainhaBranca);
 
-        Rainha rainhaPreta = new Rainha(100, 250, "rainhaPreta.png");
+        Rainha rainhaPreta = new Rainha(150, 350, "rainhaPreta.png");
         criarpeça(rainhaPreta);
 
-        Torre torreBranca = new Torre(100,300, "torreBranca.png");
+        Torre torreBranca = new Torre(0,0, "torreBranca.png");
         criarpeça(torreBranca);
+        Torre torreBranca1 = new Torre(350,0, "torreBranca.png");
+        criarpeça(torreBranca1);
 
-        Torre torrePreta = new Torre(100, 350, "torrePreta.png");
+        Torre torrePreta = new Torre(0, 350, "torrePreta.png");
         criarpeça(torrePreta);
+        Torre torrePreta1 = new Torre(350, 350, "torrePreta.png");
+        criarpeça(torrePreta1);
 
-        Bispo bispoBranco = new Bispo(100, 400, "bispoBranco.png");
+        Bispo bispoBranco = new Bispo(100, 0, "bispoBranco.png");
         criarpeça(bispoBranco);
+        Bispo bispoBranco1 = new Bispo(250, 0, "bispoBranco.png");
+        criarpeça(bispoBranco1);
 
-        Bispo bispoPreto = new Bispo(100, 450, "bispoPreto.png");
+        Bispo bispoPreto = new Bispo(100, 350, "bispoPreto.png");
         criarpeça(bispoPreto);
+        Bispo bispoPreto1 = new Bispo(250, 350, "bispoPreto.png");
+        criarpeça(bispoPreto1);
 
-        Cavalo cavaloBranco = new Cavalo(100, 500, "cavaloBranco.png");
+        Cavalo cavaloBranco = new Cavalo(50, 0, "cavaloBranco.png");
         criarpeça(cavaloBranco);
+        Cavalo cavaloBranco1 = new Cavalo(300, 0, "cavaloBranco.png");
+        criarpeça(cavaloBranco1);
 
-        Cavalo cavaloPreto = new Cavalo(100, 550, "cavaloPreto.png");
+        Cavalo cavaloPreto = new Cavalo(50, 350, "cavaloPreto.png");
         criarpeça(cavaloPreto);
+        Cavalo cavaloPreto1 = new Cavalo(300, 350, "cavaloPreto.png");
+        criarpeça(cavaloPreto1);
+        
+    for (int j = 0; j < 8; j++)
+    {
+        Peao peaoBranco = new Peao(j * 50, 50, "peaoBranco.png");
+        criarpeça(peaoBranco);
+    }
+
+    // Adicionando os peões pretos
+    for (int j = 0; j < 8; j++)
+    {
+        Peao peaoPreto = new Peao(j * 50, 300, "peaoPreto.png");
+        criarpeça(peaoPreto);
+    }
+
+
+   
+
 
 
     

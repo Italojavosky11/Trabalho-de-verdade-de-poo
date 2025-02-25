@@ -78,7 +78,7 @@ public partial class Form1 : Form
         origemX = -1;
         origemY = -1;
     }
-    Application.Run(new Form1());
+    
 }
 
 }
