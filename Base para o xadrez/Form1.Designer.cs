@@ -42,65 +42,65 @@ partial class Form1
         for(int i = 0; i < 8 ;i++){
             for(int j = 0; j<8 ;j++){
                 int x = j, y = i;
-                 tabuleiro[x,y] = new CasaVazia(x*50, y*50,"casaVazia.png");
+                 tabuleiro[x,y] = new CasaVazia(x*50, y*50,"casaVazia.png", Enumcor.vazio);
                  this.Controls.Add(tabuleiro[x,y].pictureBox);
                  tabuleiro[x,y].pictureBox.BringToFront();
                  tabuleiro[x,y].pictureBox.Click += (sender, args) => { cliqueNoTabuleiro(tabuleiro[x,y]); };
             }   
         }
         
-        Rei reiBranco = new Rei(200,0,"reiBranco.png");
+        Rei reiBranco = new Rei(200,0,"reiBranco.png", Enumcor.Branco);
         criarpeça(reiBranco);
 
-        Rei reiPreto = new Rei(200,350,"reiPreto.png");
+        Rei reiPreto = new Rei(200,350,"reiPreto.png", Enumcor.Preto);
         criarpeça(reiPreto);
 
-        Rainha rainhaBranca = new Rainha(150, 0, "rainhaBranca.png");
+        Rainha rainhaBranca = new Rainha(150, 0, "rainhaBranca.png", Enumcor.Branco);
         criarpeça(rainhaBranca);
 
-        Rainha rainhaPreta = new Rainha(150, 350, "rainhaPreta.png");
+        Rainha rainhaPreta = new Rainha(150, 350, "rainhaPreta.png", Enumcor.Preto);
         criarpeça(rainhaPreta);
 
-        Torre torreBranca = new Torre(0,0, "torreBranca.png");
+        Torre torreBranca = new Torre(0,0, "torreBranca.png", Enumcor.Branco);
         criarpeça(torreBranca);
-        Torre torreBranca1 = new Torre(350,0, "torreBranca.png");
+        Torre torreBranca1 = new Torre(350,0, "torreBranca.png", Enumcor.Branco);
         criarpeça(torreBranca1);
 
-        Torre torrePreta = new Torre(0, 350, "torrePreta.png");
+        Torre torrePreta = new Torre(0, 350, "torrePreta.png", Enumcor.Preto);
         criarpeça(torrePreta);
-        Torre torrePreta1 = new Torre(350, 350, "torrePreta.png");
+        Torre torrePreta1 = new Torre(350, 350, "torrePreta.png", Enumcor.Preto);
         criarpeça(torrePreta1);
 
-        Bispo bispoBranco = new Bispo(100, 0, "bispoBranco.png");
+        Bispo bispoBranco = new Bispo(100, 0, "bispoBranco.png", Enumcor.Branco);
         criarpeça(bispoBranco);
-        Bispo bispoBranco1 = new Bispo(250, 0, "bispoBranco.png");
+        Bispo bispoBranco1 = new Bispo(250, 0, "bispoBranco.png", Enumcor.Branco);
         criarpeça(bispoBranco1);
 
-        Bispo bispoPreto = new Bispo(100, 350, "bispoPreto.png");
+        Bispo bispoPreto = new Bispo(100, 350, "bispoPreto.png", Enumcor.Preto);
         criarpeça(bispoPreto);
-        Bispo bispoPreto1 = new Bispo(250, 350, "bispoPreto.png");
+        Bispo bispoPreto1 = new Bispo(250, 350, "bispoPreto.png", Enumcor.Preto);
         criarpeça(bispoPreto1);
 
-        Cavalo cavaloBranco = new Cavalo(50, 0, "cavaloBranco.png");
+        Cavalo cavaloBranco = new Cavalo(50, 0, "cavaloBranco.png", Enumcor.Branco);
         criarpeça(cavaloBranco);
-        Cavalo cavaloBranco1 = new Cavalo(300, 0, "cavaloBranco.png");
+        Cavalo cavaloBranco1 = new Cavalo(300, 0, "cavaloBranco.png", Enumcor.Branco);
         criarpeça(cavaloBranco1);
 
-        Cavalo cavaloPreto = new Cavalo(50, 350, "cavaloPreto.png");
+        Cavalo cavaloPreto = new Cavalo(50, 350, "cavaloPreto.png", Enumcor.Preto);
         criarpeça(cavaloPreto);
-        Cavalo cavaloPreto1 = new Cavalo(300, 350, "cavaloPreto.png");
+        Cavalo cavaloPreto1 = new Cavalo(300, 350, "cavaloPreto.png", Enumcor.Preto);
         criarpeça(cavaloPreto1);
         
     for (int j = 0; j < 8; j++)
     {
-        Peao peaoBranco = new Peao(j * 50, 50, "peaoBranco.png");
+        Peao peaoBranco = new Peao(j * 50, 50, "peaoBranco.png", Enumcor.Branco);
         criarpeça(peaoBranco);
     }
 
     // Adicionando os peões pretos
     for (int j = 0; j < 8; j++)
     {
-        Peao peaoPreto = new Peao(j * 50, 300, "peaoPreto.png");
+        Peao peaoPreto = new Peao(j * 50, 300, "peaoPreto.png", Enumcor.Preto);
         criarpeça(peaoPreto);
     }
 

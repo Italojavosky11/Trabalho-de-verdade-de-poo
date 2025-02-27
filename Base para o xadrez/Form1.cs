@@ -45,7 +45,7 @@ public partial class Form1 : Form
         {
             // Atualiza a matriz
                 // Atualiza a matriz
-                tabuleiro[origemX, origemY] = new CasaVazia(origemX * 50, origemY * 50, "casaVazia.png");
+                tabuleiro[origemX, origemY] = new CasaVazia(origemX * 50, origemY * 50, "casaVazia.png", Enumcor.vazio);
                 tabuleiro[peca.X, peca.Y] = pecaOrigem;
 
                 // Atualiza as coordenadas da peça movida
@@ -62,7 +62,7 @@ public partial class Form1 : Form
 
                 // Substitui a peça no tabuleiro
                 tabuleiro[peca.X, peca.Y] = pecaOrigem;
-                tabuleiro[origemX, origemY] = new CasaVazia(origemX * 50, origemY * 50, "casaVazia.png");
+                tabuleiro[origemX, origemY] = new CasaVazia(origemX * 50, origemY * 50, "casaVazia.png", Enumcor.vazio);
 
                 // Atualiza a posição visualmente
                 pecaOrigem.X = peca.X;
