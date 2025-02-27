@@ -1,4 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+
+
+
 public enum Enumcor{
     Branco,
     Preto,

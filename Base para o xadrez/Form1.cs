@@ -28,8 +28,17 @@ public partial class Form1 : Form
     }
     else // Segundo clique: tenta mover a peça
     {
+        
         Peça pecaOrigem = tabuleiro[origemX, origemY];
         Peça pecaDestino = tabuleiro[peca.X, peca.Y];
+        if (pecaOrigem.cor == pecaDestino.cor)
+        {
+            MessageBox.Show("Movimento Inválido, porque é do mesmo time!");
+            pecaSelecionada = null;
+            origemX = -1;
+            origemY = -1;
+            return;
+        }
 
         // Verifica se o movimento é válido
         if (!pecaOrigem.Verificarmovimento(peca.X, peca.Y))
