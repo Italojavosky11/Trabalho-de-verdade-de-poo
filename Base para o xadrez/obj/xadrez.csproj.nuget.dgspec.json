@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\55849\\Documents\\GitHub\\Trabalho-de-verdade-de-poo\\Base para o xadrez\\xadrez.csproj": {}
+    "D:\\Users\\20231170150021\\Documents\\GitHub\\Trabalho-de-verdade-de-poo\\Base para o xadrez\\xadrez.csproj": {}
   },
   "projects": {
-    "C:\\Users\\55849\\Documents\\GitHub\\Trabalho-de-verdade-de-poo\\Base para o xadrez\\xadrez.csproj": {
+    "D:\\Users\\20231170150021\\Documents\\GitHub\\Trabalho-de-verdade-de-poo\\Base para o xadrez\\xadrez.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\55849\\Documents\\GitHub\\Trabalho-de-verdade-de-poo\\Base para o xadrez\\xadrez.csproj",
+        "projectUniqueName": "D:\\Users\\20231170150021\\Documents\\GitHub\\Trabalho-de-verdade-de-poo\\Base para o xadrez\\xadrez.csproj",
         "projectName": "xadrez",
-        "projectPath": "C:\\Users\\55849\\Documents\\GitHub\\Trabalho-de-verdade-de-poo\\Base para o xadrez\\xadrez.csproj",
-        "packagesPath": "C:\\Users\\55849\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\55849\\Documents\\GitHub\\Trabalho-de-verdade-de-poo\\Base para o xadrez\\obj\\",
+        "projectPath": "D:\\Users\\20231170150021\\Documents\\GitHub\\Trabalho-de-verdade-de-poo\\Base para o xadrez\\xadrez.csproj",
+        "packagesPath": "D:\\Users\\20231170150021\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\20231170150021\\Documents\\GitHub\\Trabalho-de-verdade-de-poo\\Base para o xadrez\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\55849\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "D:\\Users\\20231170150021\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -61,7 +56,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

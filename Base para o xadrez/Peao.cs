@@ -10,7 +10,7 @@ public class Peao : Peça{
         int difY = destinoY - Y;
 
         // Considerando que o Peão se move apenas para frente
-        return (difX == 1 && difY == 0) || (difX == 1 && Math.Abs(difY) == 1);
+        return (difX == 0 && difY == 1) || (difX == 0 && Math.Abs(difY) == 1);
        
     }
 
