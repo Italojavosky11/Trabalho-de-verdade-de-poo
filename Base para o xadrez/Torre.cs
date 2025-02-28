@@ -6,6 +6,8 @@ public class Torre : Peça{
     }
     public override bool Verificarmovimento(int destinoX, int destinoY)
     {
+
         return destinoX == X || destinoY == Y;    }
 
-}
+    }
+

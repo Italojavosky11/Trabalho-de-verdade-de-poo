@@ -5,7 +5,7 @@ namespace xadrez;
 
 public partial class Form1 : Form
 {
-        public static int sizeOfTabuleiro = 8;
+    public static int sizeOfTabuleiro = 8;
     
      // Armazena a peça selecionada
     private int origemX = -1, origemY = -1; // Armazena a posição da peça
@@ -79,5 +79,7 @@ public partial class Form1 : Form
         origemX = -1;
         origemY = -1;
     }
+    Application.Run(new Form1());
 }
+
 }

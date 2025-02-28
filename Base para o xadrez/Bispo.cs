@@ -10,6 +10,7 @@ public class Bispo : Peça{
         int difY = Math.Abs(destinoY - Y);
 
         return difX == difY;
+     // falta a movimentação
        
     }
 
