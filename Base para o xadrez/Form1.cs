@@ -1,5 +1,4 @@
 using System.CodeDom.Compiler;
-using System.Net.Http.Headers;
 
 namespace xadrez;
 
@@ -7,20 +6,21 @@ public partial class Form1 : Form
 {
     public static int sizeOfTabuleiro = 8;
     
-     // Armazena a peça selecionada
+    private PictureBox pecaSelecionada = null; // Armazena a peça selecionada
     private int origemX = -1, origemY = -1; // Armazena a posição da peça
     public Peça[,] tabuleiro = new Peça[sizeOfTabuleiro,sizeOfTabuleiro];
     public Form1()
     {
         InitializeComponent();
     }
+    
     public void cliqueNoTabuleiro(Peça peca)
 {
 
     if (origemX == -1 && origemY == -1) // Primeiro clique: seleciona a peça
     {
         if (peca is not CasaVazia){
-          
+            pecaSelecionada = peca.pictureBox;
             origemX = peca.X;
             origemY = peca.Y;
             MessageBox.Show($"Peça selecionada em ({peca.X}, {peca.Y})");
@@ -28,14 +28,23 @@ public partial class Form1 : Form
     }
     else // Segundo clique: tenta mover a peça
     {
+
         Peça pecaOrigem = tabuleiro[origemX, origemY];
         Peça pecaDestino = tabuleiro[peca.X, peca.Y];
+        if (pecaOrigem.cor == pecaDestino.cor)
+        {
+            MessageBox.Show("Movimento Inválido, porque é do mesmo time!");
+            pecaSelecionada = null;
+            origemX = -1;
+            origemY = -1;
+            return;
+        }
 
         // Verifica se o movimento é válido
         if (!pecaOrigem.Verificarmovimento(peca.X, peca.Y))
         {
             MessageBox.Show("Movimento Inválido!");
-           
+            pecaSelecionada = null;
             origemX = -1;
             origemY = -1;
             return;
@@ -45,7 +54,7 @@ public partial class Form1 : Form
         {
             // Atualiza a matriz
                 // Atualiza a matriz
-                tabuleiro[origemX, origemY] = new CasaVazia(origemX * 50, origemY * 50, "casaVazia.png");
+                tabuleiro[origemX, origemY] = new CasaVazia(origemX * 50, origemY * 50, "casaVazia.png", Enumcor.vazio);
                 tabuleiro[peca.X, peca.Y] = pecaOrigem;
 
                 // Atualiza as coordenadas da peça movida
@@ -62,7 +71,7 @@ public partial class Form1 : Form
 
                 // Substitui a peça no tabuleiro
                 tabuleiro[peca.X, peca.Y] = pecaOrigem;
-                tabuleiro[origemX, origemY] = new CasaVazia(origemX * 50, origemY * 50, "casaVazia.png");
+                tabuleiro[origemX, origemY] = new CasaVazia(origemX * 50, origemY * 50, "casaVazia.png", Enumcor.vazio);
 
                 // Atualiza a posição visualmente
                 pecaOrigem.X = peca.X;
@@ -75,11 +84,11 @@ public partial class Form1 : Form
         this.Refresh();
 
         // Reseta os valores para a próxima jogada
-       
+        pecaSelecionada = null;
         origemX = -1;
         origemY = -1;
     }
-    Application.Run(new Form1());
+    
 }
 
 }
