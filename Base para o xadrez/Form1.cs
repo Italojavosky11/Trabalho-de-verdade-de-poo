@@ -9,9 +9,11 @@ public partial class Form1 : Form
     private PictureBox pecaSelecionada = null; // Armazena a peça selecionada
     private int origemX = -1, origemY = -1; // Armazena a posição da peça
     public Peça[,] tabuleiro = new Peça[sizeOfTabuleiro,sizeOfTabuleiro];
+    public ArquivoJogo arquivoJogo = new ArquivoJogo();
     public Form1()
     {
         InitializeComponent();
+
     }
     
     public void cliqueNoTabuleiro(Peça peca)
@@ -82,6 +84,7 @@ public partial class Form1 : Form
 
         // Atualiza a interface
         this.Refresh();
+        arquivoJogo.SalvarPontuacao("italo" , 50);
 
         // Reseta os valores para a próxima jogada
         pecaSelecionada = null;

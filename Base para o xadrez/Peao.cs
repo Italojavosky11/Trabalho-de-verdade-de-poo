@@ -10,35 +10,32 @@ public class Peao : Peça
 
     public override bool Verificarmovimento(int destinoX, int destinoY)
     {
-        int difX = destinoX - X;
-        int difY = destinoY - Y;
-
-        // Define a direção do peão com base na corS
-        int direcao = (cor == Enumcor.Branco) ? 1 : -1;
-
-        // Movimento para frente
-        if (difX == 0)
+        int diferençaY = destinoY - Y;
+        int diferençaX = Math.Abs(destinoX - X);
+        if(cor == Enumcor.Branco)
         {
-            // Movimento de uma casa
-            if (difY == direcao)
-            {
-                PrimeiraJogada = false; // Após o primeiro movimento, não pode mais avançar duas casas
-                return true;
-            }
-            // Movimento de duas casas (apenas na primeira jogada)
-            if (PrimeiraJogada && difY == 2 * direcao)
+            if(PrimeiraJogada)
             {
                 PrimeiraJogada = false;
-                return true;
+                return diferençaY >= -2 && diferençaX == 0;
+            }
+
+            else{
+                return diferençaY == -1 && diferençaX == 0;
             }
         }
-        // Captura na diagonal
-        else if (Math.Abs(difX) == 1 && difY == direcao)
-        {
-            PrimeiraJogada = false;
-            return true;
-        }
+        else{
+            if(PrimeiraJogada)
+            {
+                PrimeiraJogada = false;
+                return diferençaY <= 2 && diferençaX == 0;
+            }
 
-        return false; // Movimento inválido
+            else{
+                
+                return diferençaY == 1 && diferençaX == 0;
+                
+            }
+        }
     }
 }

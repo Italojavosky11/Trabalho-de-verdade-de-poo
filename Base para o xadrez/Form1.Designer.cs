@@ -119,7 +119,7 @@ partial class Form1
         criarpeça(peaoBranco);
     }
 
-    // Adicionando os peões pretos
+    
     for (int j = 0; j < 8; j++)
     {
         Peao peaoPreto = new Peao(j * 50, 300, "peaoPreto.png", Enumcor.Preto);
