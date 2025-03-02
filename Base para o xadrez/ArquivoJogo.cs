@@ -1,30 +1,51 @@
 using System;
+using System.IO;
+using System.Windows.Forms;
 
-public class ArquivoJogo{
-    private string caminhoArquivo = "xadrez.txt";
-    private string highscores = "podio.txt";
-    public int  placar = 0; 
-    public void SalvarPontuacao(string jogador, int pontos)
+public class ArquivoJogo
+{
+    private string caminhoArquivo = "jogadas.txt";  // Nome correto do arquivo
+    
+    public void SalvarJogadas(Peça[,] grid)
     {
-        string entrada = $"{jogador} : {pontos}";
-        File.AppendAllText(caminhoArquivo, entrada +Environment.NewLine);
-       MessageBox.Show("Jogada salva com sucesso!");
+        string caminho = "jogadas.txt";
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                Peça entrada = grid[i, j];
 
+                if (i == 0 && j == 0)
+                {
+                    File.AppendAllText(caminho, entrada.ToString());
+                }
+                else
+                {
+                    File.AppendAllText(caminho, "," + entrada.ToString());
+                }
+            }
+        }
 
+        File.AppendAllText(caminho, Environment.NewLine);
+        MessageBox.Show($"{DateTime.Now} : Jogada salva com sucesso!");
     }
-    public void CarregarPontucoes(){
-        if (File.Exists(caminhoArquivo)){
+
+    public void CarregarJogadas()
+    {
+        if (File.Exists(caminhoArquivo))
+        {
             string[] linhas = File.ReadAllLines(caminhoArquivo);
-            MessageBox.Show("high scores");
-            foreach(string linha in linhas ) MessageBox.Show(linha);
+            string[] jogadas = linhas[0].Split(',');
+
+            int index = 0;
+            
+
+            MessageBox.Show("Jogada carregada com sucesso!");
         }
-
-        else{
-            Console.WriteLine("nenhua joagada salva");
+        else
+        {
+            MessageBox.Show("Jogo reiniciado");
         }
-    }
-
-
-
-
+    }   
+    
 }

@@ -1,8 +1,6 @@
-using System.CodeDom.Compiler;
-
+using System;
 namespace xadrez;
-
-public partial class Form1 : Form
+partial class Form1 : Form
 {
     public static int sizeOfTabuleiro = 8;
     
@@ -10,6 +8,8 @@ public partial class Form1 : Form
     private int origemX = -1, origemY = -1; // Armazena a posição da peça
     public Peça[,] tabuleiro = new Peça[sizeOfTabuleiro,sizeOfTabuleiro];
     public ArquivoJogo arquivoJogo = new ArquivoJogo();
+    public bool  vezBranco = true;
+    public int numerojogadas = 0;
     public Form1()
     {
         InitializeComponent();
@@ -22,10 +22,21 @@ public partial class Form1 : Form
     if (origemX == -1 && origemY == -1) // Primeiro clique: seleciona a peça
     {
         if (peca is not CasaVazia){
+            if (vezBranco && peca.cor == Enumcor.Branco){
             pecaSelecionada = peca.pictureBox;
             origemX = peca.X;
             origemY = peca.Y;
-            MessageBox.Show($"Peça selecionada em ({peca.X}, {peca.Y})");
+            MessageBox.Show($"Peça selecionada em ({peca.X}, {peca.Y})");}
+            else if(!vezBranco && peca.cor == Enumcor.Preto)
+            {
+                pecaSelecionada = peca.pictureBox;
+                origemX = peca.X;
+                origemY = peca.Y;
+                MessageBox.Show($"Peça selecionada em ({peca.X}, {peca.Y})");
+            }
+            else {
+                MessageBox.Show("Vez do outro jogador");
+            }
         }
     }
     else // Segundo clique: tenta mover a peça
@@ -79,12 +90,33 @@ public partial class Form1 : Form
                 pecaOrigem.X = peca.X;
                 pecaOrigem.Y = peca.Y;
                 pecaOrigem.pictureBox.Location = new Point(peca.X * 50, peca.Y * 50);
-            
+
+            if (pecaDestino is Rei){
+                switch(pecaDestino.cor){
+                    case Enumcor.Branco:
+                        MessageBox.Show("Team preto vencedor!");
+                        Application.Exit();
+                    break;
+
+                    case Enumcor.Preto:
+                        MessageBox.Show("Team white vencedor!");
+                        Application.Exit();
+                    break;
+                }
+            }
+        }
+        switch(vezBranco){
+            case true: 
+                vezBranco = false;
+            break;
+            case false:
+                vezBranco = true;
+            break;
         }
 
         // Atualiza a interface
         this.Refresh();
-        arquivoJogo.SalvarPontuacao("italo" , 50);
+        arquivoJogo.SalvarJogadas(tabuleiro);
 
         // Reseta os valores para a próxima jogada
         pecaSelecionada = null;

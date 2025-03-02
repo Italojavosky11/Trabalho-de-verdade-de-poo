@@ -133,6 +133,8 @@ partial class Form1
 
     
     }
+
+    
     public void criarpeça(Peça peca)
     {
      tabuleiro[peca.X, peca.Y] = peca;

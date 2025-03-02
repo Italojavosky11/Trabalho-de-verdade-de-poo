@@ -1,41 +1,30 @@
-using System;
-
 public class Peao : Peça
 {
-    public bool PrimeiraJogada { get; private set; } = true;
-
-    public Peao(int x, int y, string img, Enumcor cor) : base(x, y, img, cor)
-    {
-    }
+    public Peao(int x, int y, string imagem, Enumcor cor) : base(x, y, imagem, cor) { }
 
     public override bool Verificarmovimento(int destinoX, int destinoY)
     {
-        int diferençaY = destinoY - Y;
-        int diferençaX = Math.Abs(destinoX - X);
-        if(cor == Enumcor.Branco)
+        
+        int direcao = cor == Enumcor.Branco ? 1 : -1; // o ponto de interrogação é como se fosse if e else, só que bem menor
+
+       
+        if (destinoX == X && destinoY == Y + direcao)
         {
-            if(PrimeiraJogada)
-            {
-                PrimeiraJogada = false;
-                return diferençaY >= -2 && diferençaX == 0;
-            }
-
-            else{
-                return diferençaY == -1 && diferençaX == 0;
-            }
+            return true;
         }
-        else{
-            if(PrimeiraJogada)
-            {
-                PrimeiraJogada = false;
-                return diferençaY <= 2 && diferençaX == 0;
-            }
 
-            else{
-                
-                return diferençaY == 1 && diferençaX == 0;
-                
-            }
+       
+        if (destinoX == X && (Y == 1 && cor == Enumcor.Branco || Y == 6 && cor == Enumcor.Preto) && destinoY == Y + (direcao * 2))
+        {
+            return true;
         }
+
+       
+        if (Math.Abs(destinoX - X) == 1 && destinoY == Y + direcao)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
