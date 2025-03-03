@@ -14,5 +14,6 @@ public class Rainha : Peça{
         return (difX == 0 || difY == 0 || difX == difY);
        
     }
+    
 
 }

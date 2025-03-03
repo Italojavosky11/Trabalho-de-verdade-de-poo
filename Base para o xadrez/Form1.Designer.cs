@@ -20,6 +20,7 @@ partial class Form1
             components.Dispose();
         }
         base.Dispose(disposing);
+        
     }
 
     #region Windows Form Designer generated code
