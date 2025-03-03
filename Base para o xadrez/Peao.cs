@@ -1,3 +1,6 @@
+//projeto feito por: Italo Javosky da Silva camilo e Manoel Vinicios da Silva
+
+using System;
 public class Peao : Peça
 {
     public Peao(int x, int y, string imagem, Enumcor cor) : base(x, y, imagem, cor) { }

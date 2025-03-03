@@ -1,3 +1,4 @@
+//projeto feito por: Italo Javosky da Silva camilo e Manoel Vinicios da Silva
 using System;
 public class Rei : Peça{
     public Rei(int x, int y, string img, Enumcor cor) : base( x, y,  img, cor){

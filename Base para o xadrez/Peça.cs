@@ -1,7 +1,6 @@
+//projeto feito por: Italo Javosky da Silva camilo e Manoel Vinicios da Silva
+
 using System.ComponentModel.DataAnnotations;
-
-
-
 public enum Enumcor{
     Branco,
     Preto,

@@ -1,3 +1,4 @@
+//projeto feito por: Italo Javosky da Silva camilo e Manoel Vinicios da Silva
 using System;
 
 namespace xadrez;
@@ -139,7 +140,7 @@ partial class Form1 : Form
             origemY = -1;
         }
     }
-
+  
     // Método para verificar se o caminho está livre para peças com movimento contínuo
     private bool CaminhoLivre(Peça pecaOrigem, int destinoX, int destinoY)
     {

@@ -1,5 +1,5 @@
+//projeto feito por: Italo Javosky da Silva camilo e Manoel Vinicios da Silva
 namespace xadrez;
-
 static class Program
 {
     /// <summary>

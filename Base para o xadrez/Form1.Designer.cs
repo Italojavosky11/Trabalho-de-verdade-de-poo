@@ -1,4 +1,6 @@
-﻿using System;
+﻿//projeto feito por: Italo Javosky da Silva camilo e Manoel Vinicios da Silva
+
+using System;
 using System.Runtime.CompilerServices;
 namespace xadrez;
 
